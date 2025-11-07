@@ -1,0 +1,11 @@
+services:
+  streamlit:
+    build:
+      context: app  # Point to the app directory with the Dockerfile
+      dockerfile: Dockerfile  # Dockerfile is in the app directory
+    container_name: christmasgift_app
+    volumes:
+      - ./app:/app
+    working_dir: /app
+    ports:
+      - ${ST_PORT_HOST}:${ST_PORT_CONT}
